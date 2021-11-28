@@ -11,12 +11,11 @@ namespace OneDimensionalArrays
             b = temp;
         }
 
-        public static int MinimumArrayValue(int sizeArray = 5, int startRandomNumber = -10, int lastRandomNumber = 10)
+        public static int MinimumArrayValue(int[] array)
         {
-            int[] array = FillingArray(sizeArray, startRandomNumber, lastRandomNumber);
             int min = array[0];
 
-            for (int i = 1; i < array.Length - 1; i++)
+            for (int i = 1; i < array.Length; i++)
             {
                 if (min > array[i])
                 {
@@ -27,16 +26,13 @@ namespace OneDimensionalArrays
             return min;
         }
 
-        public static int MinimumArrayValueV2(int sizeArray = 5, int startRandomNumber = -10, int lastRandomNumber = 10)
+        public static int MinimumArrayValueV2(int[] array)
         {
-            (int minI, int[] array) = MinimumArrayValueIndex(sizeArray, startRandomNumber, lastRandomNumber);
-
-            return array[minI];
+            return array[MinimumArrayValueIndex(array)];
         }
 
-        public static (int, int[]) MinimumArrayValueIndex(int sizeArray = 5, int startRandomNumber = -10, int lastRandomNumber = 10)
+        public static int MinimumArrayValueIndex(int[] array)
         {
-            int[] array = FillingArray(sizeArray, startRandomNumber, lastRandomNumber);
             int minI = 0;
 
             for (int i = 1; i < array.Length; i++)
@@ -47,12 +43,11 @@ namespace OneDimensionalArrays
                 }
             }
 
-            return (minI, array);
+            return minI;
         }
 
-        public static int MaximumArrayValue(int sizeArray = 5, int startRandomNumber = -10, int lastRandomNumber = 10)
+        public static int MaximumArrayValue(int[] array)
         {
-            int[] array = FillingArray(sizeArray, startRandomNumber, lastRandomNumber);
             int max = array[0];
 
             for (int i = 1; i < array.Length; i++)
@@ -66,17 +61,13 @@ namespace OneDimensionalArrays
             return max;
         }
 
-        public static int MaximumArrayValueV2(int sizeArray = 5, int startRandomNumber = -10, int lastRandomNumber = 10)
+        public static int MaximumArrayValueV2(int[] array)
         {
-
-            (int maxI,int[] array) = MaximumArrayValueIndex(sizeArray, startRandomNumber, lastRandomNumber);
-
-            return array[maxI];
+            return array[MaximumArrayValueIndex(array)];
         }
 
-        public static (int, int[]) MaximumArrayValueIndex(int sizeArray = 5, int startRandomNumber = -10, int lastRandomNumber = 10)
+        public static int MaximumArrayValueIndex(int[] array)
         {
-            int[] array = FillingArray(sizeArray, startRandomNumber, lastRandomNumber);
             int maxI = 0;
 
             for (int i = 1; i < array.Length; i++)
@@ -87,7 +78,7 @@ namespace OneDimensionalArrays
                 }
             }
 
-            return (maxI, array);
+            return maxI;
         }
 
         public static int SumOddIndexArray(int sizeArray = 5, int startRandomNumber = -10, int lastRandomNumber = 10)
@@ -106,10 +97,8 @@ namespace OneDimensionalArrays
             return sumOddI;
         }
 
-        public static int[] ReverseArray(int sizeArray = 5, int startRandomNumber = -10, int lastRandomNumber = 10)
+        public static int[] ReverseArray(int[] array)
         {
-            int[] array = FillingArray(sizeArray, startRandomNumber, lastRandomNumber);
-
             for (int i = 0; i < array.Length / 2; i++)
             {
                 Swap(ref array[i], ref array[array.Length - 1 - i]);
@@ -118,12 +107,11 @@ namespace OneDimensionalArrays
             return array;
         }
 
-        public static int SumOddValueInArray(int sizeArray = 5, int startRandomNumber = -10, int lastRandomNumber = 10)
+        public static int SumOddValueInArray(int[] array)
         {
-            int[] array = FillingArray(sizeArray, startRandomNumber, lastRandomNumber);
             int sumOdd = 0;
 
-            for (int i = 1; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 if (array[i] % 2 != 0)
                 {
@@ -134,35 +122,19 @@ namespace OneDimensionalArrays
             return sumOdd;
         }
 
-        public static (int[], int[]) HalfReverseArray(int sizeArray = 5, int startRandomNumber = -10, int lastRandomNumber = 10)
+        public static int[] HalfReverseArray(int[] array)
         {
-            int[] array = FillingArray(sizeArray, startRandomNumber, lastRandomNumber);
-            int[] debagArray = new int[array.Length];
-
-            for (int i = 0; i < debagArray.Length; i++)
-            {
-                debagArray[i] = array[i];
-            }
-
             int startPosition = array.Length / 2 + array.Length % 2;
             for (int i = 0; i < array.Length / 2; i++)
             {
                 Swap(ref array[i], ref array[startPosition + i]);
             }
 
-            return (debagArray, array);
+            return array;
         }
 
-        public static (int[], int[]) BubbleSortAsc(int sizeArray = 5, int startRandomNumber = -10, int lastRandomNumber = 10)
+        public static int[] BubbleSortAsc(int[] array)
         {
-            int[] array = FillingArray(sizeArray, startRandomNumber, lastRandomNumber);
-            int[] debagArray = new int[array.Length];
-
-            for (int i = 0; i < debagArray.Length; i++)
-            {
-                debagArray[i] = array[i];
-            }
-
             for (int i = 0; i < array.Length - 1; i++)
             {
                 for (int j = i + 1; j < array.Length; j++)
@@ -174,19 +146,11 @@ namespace OneDimensionalArrays
                 }
             }
 
-            return (debagArray, array);
+            return array;
         }
 
-        public static (int[], int[]) SelectionSortDesc(int sizeArray = 5, int startRandomNumber = -10, int lastRandomNumber = 10)
+        public static int[] SelectionSortDesc(int[] array)
         {
-            int[] array = FillingArray(sizeArray, startRandomNumber, lastRandomNumber);
-            int[] debagArray = new int[array.Length];
-
-            for (int i = 0; i < debagArray.Length; i++)
-            {
-                debagArray[i] = array[i];
-            }
-
             for (int i = 0; i < array.Length - 1; i++)
             {
                 int max = i;
@@ -201,10 +165,10 @@ namespace OneDimensionalArrays
                 Swap(ref array[i], ref array[max]);
             }
 
-            return (debagArray, array);
+            return array;
         }
 
-        private static int[] FillingArray(int sizeArray = 5, int startRandomNumber = -10, int lastRandomNumber = 10)
+        public static int[] FillingArray(int sizeArray = 5, int startRandomNumber = -10, int lastRandomNumber = 10)
         {
             int[] array = new int[sizeArray];
 

@@ -7,61 +7,99 @@ namespace HomeWorkLessonArray
     {
         static void Main(string[] args)
         {
-            Console.WriteLine($"Min = {OneDimensionalArraysLibrary.MinimumArrayValue(5, -8, 20)}");
-            Console.WriteLine();
-            Console.WriteLine($"Max = {OneDimensionalArraysLibrary.MaximumArrayValue(5, 0, 20)}");
-            Console.WriteLine();
-
-            (int minI, int[] arrayMin) = OneDimensionalArraysLibrary.MinimumArrayValueIndex(5, -8, 20);
-            for (int i = 0; i < arrayMin.Length; i++)
+            int[] array = OneDimensionalArraysLibrary.FillingArray(5,-8,20);
+            Console.WriteLine("Input array: ");
+            foreach (int item in array)
             {
-                Console.Write($"{arrayMin[i]} ");
+                Console.Write($"{item} ");
             }
-            Console.WriteLine($"\tMin value in array indexed = {minI}");
-            Console.WriteLine();
 
-            (int maxI, int[] arrayMax) = OneDimensionalArraysLibrary.MaximumArrayValueIndex(5, -8, 20);
-            for (int i = 0; i < arrayMax.Length; i++)
+            Console.WriteLine($"{Environment.NewLine}Min = {OneDimensionalArraysLibrary.MinimumArrayValue(array)}" +
+                $" / find Min whith index = {OneDimensionalArraysLibrary.MinimumArrayValueV2(array)}");
+            Console.WriteLine($"{Environment.NewLine}Max = {OneDimensionalArraysLibrary.MaximumArrayValue(array)}" +
+                $" / find Max whith index = {OneDimensionalArraysLibrary.MaximumArrayValueV2(array)}");
+
+            array = OneDimensionalArraysLibrary.FillingArray(5, -8, 20);
+            Console.WriteLine($"{Environment.NewLine}Input array: ");
+            foreach (int item in array)
             {
-                Console.Write($"{arrayMax[i]} ");
+                Console.Write($"{item} ");
             }
-            Console.WriteLine($"\tMax value in array indexed = {maxI}");
-            int[] reverseArray = OneDimensionalArraysLibrary.ReverseArray(5, 1, 5);
-            Console.WriteLine();
 
-            Console.Write("Reverse array : ");
-            for (int i = 0; i < reverseArray.Length; i++)
+            Console.WriteLine($"{Environment.NewLine}Min value in array indexed = " +
+                $"{OneDimensionalArraysLibrary.MinimumArrayValueIndex(array)}");
+            Console.WriteLine($"{Environment.NewLine}Max value in array indexed = " +
+                $"{OneDimensionalArraysLibrary.MaximumArrayValueIndex(array)}");
+
+            array = OneDimensionalArraysLibrary.FillingArray(5, -20, 20);
+            Console.Write($"{Environment.NewLine}Input array: \t\t");
+            foreach (int item in array)
             {
-                Console.Write($"{reverseArray[i]} ");
+                Console.Write($"{item} ");
             }
-            Console.WriteLine();
 
-            Console.WriteLine($"{Environment.NewLine}Sum odd numbers in array = {OneDimensionalArraysLibrary.SumOddValueInArray(5, 0, 20)}");
-            (int[] debagArray, int[] halfReverseArray) = OneDimensionalArraysLibrary.HalfReverseArray(5, 1, 5);
-            Console.WriteLine();
-
-            Console.WriteLine("Half reverse array : ");
-            for (int i = 0; i < halfReverseArray.Length; i++)
+            int[] reverseArray = OneDimensionalArraysLibrary.ReverseArray(array);
+            Console.Write($"{Environment.NewLine}Reverse array : \t");
+            foreach (int item in reverseArray)
             {
-                Console.WriteLine($"Input number{debagArray[i]} / reversed {halfReverseArray[i]} ");
-            }
-            Console.WriteLine();
-
-            (int[] debagBubbleArray, int[] bubbleSortArray) = OneDimensionalArraysLibrary.BubbleSortAsc(5, 1, 5);
-            Console.WriteLine("Sort (bubble) array/ascending): ");
-            for (int i = 0; i < bubbleSortArray.Length; i++)
-            {
-                Console.WriteLine($"Input number{debagBubbleArray[i]} / sorted {bubbleSortArray[i]} ");
+                Console.Write($"{item} ");
             }
             Console.WriteLine();
 
-            (int[] debagSelectionArray, int[] selectionSortArray) = OneDimensionalArraysLibrary.SelectionSortDesc(5, 1, 5);
-            Console.WriteLine("Sort (Selection) array/descending): ");
-            for (int i = 0; i < selectionSortArray.Length; i++)
+            Console.WriteLine($"{Environment.NewLine}Input array:");
+            foreach (int item in array)
             {
-                Console.WriteLine($"Input number{debagSelectionArray[i]} / sorted {selectionSortArray[i]} ");
+                Console.Write($"{item} ");
             }
 
+            Console.WriteLine($"\tSum odd numbers in array = {OneDimensionalArraysLibrary.SumOddValueInArray(array)}");
+
+            array = OneDimensionalArraysLibrary.FillingArray(6, -10, 10);
+            Console.Write($"{Environment.NewLine}Input array:\t\t");
+            foreach (int item in array)
+            {
+                Console.Write($"{item} ");
+            }
+
+            int[] halfReverseArray = OneDimensionalArraysLibrary.HalfReverseArray(array);
+
+            Console.Write($"{Environment.NewLine}Half reverse array :\t");
+            foreach (int item in halfReverseArray)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine();
+
+            array = OneDimensionalArraysLibrary.FillingArray(5, -5, 5);
+            Console.Write($"{Environment.NewLine}Input array:\t\t\t");
+            foreach (int item in array)
+            {
+                Console.Write($"{item} ");
+            }
+
+            int[] bubbleSortArray = OneDimensionalArraysLibrary.BubbleSortAsc(array);
+            Console.Write($"{Environment.NewLine}Bubble sort array (ascending):\t");
+
+            foreach (int item in bubbleSortArray)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine();
+
+            Console.Write($"{Environment.NewLine}Input array:\t\t\t\t");
+            foreach (int item in array)
+            {
+                Console.Write($"{item} ");
+            }
+
+            int[] selectionSortArray = OneDimensionalArraysLibrary.SelectionSortDesc(array);
+            Console.Write($"{Environment.NewLine}Selection sort array (descending):\t");
+
+            foreach (int item in selectionSortArray)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine();
         }
     }
 }
