@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDimensionalArraysLibrary", "OneDimensionalArraysLibrary\OneDimensionalArraysLibrary.csproj", "{E6E68F16-0E57-4431-95B5-B5B3390F5263}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneDimensionalArraysLibrary", "OneDimensionalArraysLibrary\OneDimensionalArraysLibrary.csproj", "{E6E68F16-0E57-4431-95B5-B5B3390F5263}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestArrayConsole", "TestArrayConsole\TestArrayConsole.csproj", "{D297ABEC-BD01-4C4B-8F49-A43A7EFE7B4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestArrayConsole", "TestArrayConsole\TestArrayConsole.csproj", "{D297ABEC-BD01-4C4B-8F49-A43A7EFE7B4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDimensionArrayUnitTest", "OneDimensionArrayUnitTest\OneDimensionArrayUnitTest.csproj", "{44D08C24-0DDA-4486-A37A-E6E7C9DC1F85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D297ABEC-BD01-4C4B-8F49-A43A7EFE7B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D297ABEC-BD01-4C4B-8F49-A43A7EFE7B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D297ABEC-BD01-4C4B-8F49-A43A7EFE7B4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D08C24-0DDA-4486-A37A-E6E7C9DC1F85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D08C24-0DDA-4486-A37A-E6E7C9DC1F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D08C24-0DDA-4486-A37A-E6E7C9DC1F85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D08C24-0DDA-4486-A37A-E6E7C9DC1F85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

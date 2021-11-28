@@ -105,7 +105,7 @@ namespace OneDimensionalArrays
         {
             if (array == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("Some method received a null argument");
             }
 
             int sumOddI = 0;
@@ -125,7 +125,7 @@ namespace OneDimensionalArrays
         {
             if (array == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("Some method received a null argument");
             }
 
             if (array.Length == 1)
@@ -146,7 +146,7 @@ namespace OneDimensionalArrays
         {
             if (array == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("Some method received a null argument");
             }
 
             int sumOdd = 0;
@@ -164,9 +164,9 @@ namespace OneDimensionalArrays
 
         public static int[] HalfReverseArray(int[] array)
         {
-            if (array == null)
+            if (array == null || array.Length == 0)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentException("Some method received a null argument");
             }
 
             if (array.Length < 3)
@@ -186,9 +186,9 @@ namespace OneDimensionalArrays
 
         public static int[] BubbleSortAsc(int[] array)
         {
-            if (array == null)
+            if (array == null || array.Length == 0)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("Some method received a null argument");
             }
 
             for (int i = 0; i < array.Length - 1; i++)
@@ -207,9 +207,9 @@ namespace OneDimensionalArrays
 
         public static int[] SelectionSortDesc(int[] array)
         {
-            if (array == null)
+            if (array == null || array.Length == 0)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("Some method received a null argument");
             }
 
             for (int i = 0; i < array.Length - 1; i++)
