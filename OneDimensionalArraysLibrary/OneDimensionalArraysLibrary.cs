@@ -13,6 +13,11 @@ namespace OneDimensionalArrays
 
         public static int MinimumArrayValue(int[] array)
         {
+            if (array==null || array.Length==0)
+            {
+                throw new Exception("No minimum value in empty array");
+            }
+
             int min = array[0];
 
             for (int i = 1; i < array.Length; i++)
@@ -33,6 +38,11 @@ namespace OneDimensionalArrays
 
         public static int MinimumArrayValueIndex(int[] array)
         {
+            if (array == null || array.Length == 0)
+            {
+                throw new Exception("No minimum index in empty array");
+            }
+
             int minI = 0;
 
             for (int i = 1; i < array.Length; i++)
@@ -48,6 +58,11 @@ namespace OneDimensionalArrays
 
         public static int MaximumArrayValue(int[] array)
         {
+            if (array == null || array.Length == 0)
+            {
+                throw new Exception("No maximum value in empty array");
+            }
+
             int max = array[0];
 
             for (int i = 1; i < array.Length; i++)
@@ -68,6 +83,11 @@ namespace OneDimensionalArrays
 
         public static int MaximumArrayValueIndex(int[] array)
         {
+            if (array == null || array.Length == 0)
+            {
+                throw new Exception("No maximum index in empty array");
+            }
+
             int maxI = 0;
 
             for (int i = 1; i < array.Length; i++)
@@ -81,9 +101,13 @@ namespace OneDimensionalArrays
             return maxI;
         }
 
-        public static int SumOddIndexArray(int sizeArray = 5, int startRandomNumber = -10, int lastRandomNumber = 10)
+        public static int SumOddIndexArray(int[] array)
         {
-            int[] array = FillingArray(sizeArray, startRandomNumber, lastRandomNumber);
+            if (array == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             int sumOddI = 0;
 
             for (int i = 1; i < array.Length; i++)
@@ -99,6 +123,17 @@ namespace OneDimensionalArrays
 
         public static int[] ReverseArray(int[] array)
         {
+            if (array == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (array.Length == 1)
+            {
+                throw new Exception("Array cannot be modified with one element");
+
+            }
+
             for (int i = 0; i < array.Length / 2; i++)
             {
                 Swap(ref array[i], ref array[array.Length - 1 - i]);
@@ -109,6 +144,11 @@ namespace OneDimensionalArrays
 
         public static int SumOddValueInArray(int[] array)
         {
+            if (array == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             int sumOdd = 0;
 
             for (int i = 0; i < array.Length; i++)
@@ -124,6 +164,17 @@ namespace OneDimensionalArrays
 
         public static int[] HalfReverseArray(int[] array)
         {
+            if (array == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (array.Length < 3)
+            {
+                throw new Exception("Few elements in the array");
+
+            }
+
             int startPosition = array.Length / 2 + array.Length % 2;
             for (int i = 0; i < array.Length / 2; i++)
             {
@@ -135,6 +186,11 @@ namespace OneDimensionalArrays
 
         public static int[] BubbleSortAsc(int[] array)
         {
+            if (array == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             for (int i = 0; i < array.Length - 1; i++)
             {
                 for (int j = i + 1; j < array.Length; j++)
@@ -151,6 +207,11 @@ namespace OneDimensionalArrays
 
         public static int[] SelectionSortDesc(int[] array)
         {
+            if (array == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             for (int i = 0; i < array.Length - 1; i++)
             {
                 int max = i;
@@ -170,6 +231,11 @@ namespace OneDimensionalArrays
 
         public static int[] FillingArray(int sizeArray = 5, int startRandomNumber = -10, int lastRandomNumber = 10)
         {
+            if (sizeArray == 0)
+            {
+                throw new Exception("Array size cannot be 0");
+            }
+
             int[] array = new int[sizeArray];
 
             Random randomNumber = new Random();

@@ -31,6 +31,14 @@ namespace HomeWorkLessonArray
             Console.WriteLine($"{Environment.NewLine}Max value in array indexed = " +
                 $"{OneDimensionalArraysLibrary.MaximumArrayValueIndex(array)}");
 
+            Console.WriteLine($"{Environment.NewLine}Input array: ");
+            foreach (int item in array)
+            {
+                Console.Write($"{item} ");
+            }
+
+            Console.WriteLine($"\t\tSum value odd index array = {OneDimensionalArraysLibrary.SumOddIndexArray(array)}");
+
             array = OneDimensionalArraysLibrary.FillingArray(5, -20, 20);
             Console.Write($"{Environment.NewLine}Input array: \t\t");
             foreach (int item in array)
@@ -54,7 +62,7 @@ namespace HomeWorkLessonArray
 
             Console.WriteLine($"\tSum odd numbers in array = {OneDimensionalArraysLibrary.SumOddValueInArray(array)}");
 
-            array = OneDimensionalArraysLibrary.FillingArray(6, -10, 10);
+            array = OneDimensionalArraysLibrary.FillingArray(5, -10, 10);
             Console.Write($"{Environment.NewLine}Input array:\t\t");
             foreach (int item in array)
             {
